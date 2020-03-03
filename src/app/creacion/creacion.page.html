@@ -1,0 +1,87 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Creación</ion-title>
+        <ion-buttons slot="start">
+            <!--Boton que lleva a la pagina principal-->
+            <ion-back-button defaultHref="/menu"></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <br/><br/><br/><br/>
+    <form (ngSubmit)="onSubmit()">
+
+        <ion-item>
+            <!--<ion-icon name="person" item-start></ion-icon>-->
+            <ion-label position="floating">Nombre:</ion-label>
+            <ion-input name="nombre" type="text" placeholder="nombre" [required] [(ngModel)]="receta.nombre"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <h1>Ingredientes</h1>
+            <ion-icon name="fast-food-outline" slot="end"></ion-icon>
+        </ion-item>
+        <br/>
+
+        <ion-item>
+            <ion-label position="floating">Ingrediente 1: </ion-label>
+            <ion-input name="ingrediente1" type="text" placeholder="Ingrediente" [required] [(ngModel)]="receta.ingrediente1"></ion-input>
+        </ion-item>
+
+        <ion-item *ngIf="receta.ingrediente1 != null">
+            <!--<ion-icon name="person" item-start></ion-icon>-->
+            <ion-label position="floating">Ingrediente 2: </ion-label>
+            <ion-input name="ingrediente2" type="text" placeholder="Ingrediente" [(ngModel)]="receta.ingrediente2"></ion-input>
+        </ion-item>
+
+        <ion-item *ngIf="receta.ingrediente2 != null">
+            <!--<ion-icon name="person" item-start></ion-icon>-->
+            <ion-label position="floating">Ingrediente 3: </ion-label>
+            <ion-input name="ingrediente3" type="text" placeholder="Ingrediente" [(ngModel)]="receta.ingrediente3"></ion-input>
+        </ion-item>
+
+        <ion-item *ngIf="receta.ingrediente3 != null">
+            <!--<ion-icon name="person" item-start></ion-icon>-->
+            <ion-label position="floating">Ingrediente 4: </ion-label>
+            <ion-input name="ingrediente4" type="text" placeholder="Ingrediente" [(ngModel)]="receta.ingrediente4"></ion-input>
+        </ion-item>
+
+        <ion-item *ngIf="receta.ingrediente4 != null">
+            <!--<ion-icon name="person" item-start></ion-icon>-->
+            <ion-label position="floating">Ingrediente 5: </ion-label>
+            <ion-input name="ingrediente5" type="text" placeholder="Ingrediente" [(ngModel)]="receta.ingrediente5"></ion-input>
+        </ion-item>
+
+        <ion-item *ngIf="receta.ingrediente5 != null">
+            <!--<ion-icon name="person" item-start></ion-icon>-->
+            <ion-label position="floating">Ingrediente 6: </ion-label>
+            <ion-input name="ingrediente6" type="text" placeholder="Ingrediente" [(ngModel)]="receta.ingrediente6"></ion-input>
+        </ion-item>
+
+        <ion-item *ngIf="receta.ingrediente6 != null">
+            <!--<ion-icon name="person" item-start></ion-icon>-->
+            <ion-label position="floating">Ingrediente 7: </ion-label>
+            <ion-input name="ingrediente7" type="text" placeholder="Ingrediente" [(ngModel)]="receta.ingrediente7"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <!--<ion-icon name="person" item-start></ion-icon>-->
+            <ion-label position="floating">Preparación: </ion-label>
+            <ion-input name="preparacion" type="text" placeholder="Preparación" [(ngModel)]="receta.preparacion"></ion-input>
+        </ion-item>
+        <ion-item>
+            <!--<ion-icon name="person" item-start></ion-icon>-->
+            <ion-label position="floating">Comentario: </ion-label>
+            <ion-input name="comentario" type="text" placeholder="Comentario" [(ngModel)]="receta.comentario"></ion-input>
+        </ion-item>
+        <ion-item>
+            <!--<ion-icon name="person" item-start></ion-icon>-->
+            <ion-label position="floating">Imagen: </ion-label>
+            <ion-input name="imagen" type="text" placeholder="Imagen" [required] [(ngModel)]="receta.imagen"></ion-input>
+        </ion-item>
+
+        <ion-button type="submit" fill="solid" expand="block" color="dark">Guardar</ion-button>
+    </form>
+
+</ion-content>

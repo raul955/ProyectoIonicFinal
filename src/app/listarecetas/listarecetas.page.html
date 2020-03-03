@@ -1,0 +1,115 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Recetas</ion-title>
+        <ion-buttons slot="start">
+            <!--Boton que lleva a la pagina principal-->
+            <ion-back-button defaultHref="/menu"></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-item button *ngFor="let receta of recetas" (click)="accion1()">
+        <ion-card>
+            <!-- card visible o invisible-->
+            <ion-card-header text-center *ngIf="!ocultar1" style="width: 20rem; height: auto;">
+
+                <ion-item position="floating" lines="none">
+                    <ion-avatar>
+                        <img src="{{receta.imagen}}" alt="{{receta.nombre}}">
+                    </ion-avatar>
+                    <ion-label text-wrap>
+                        <h3>{{receta.nombre}}</h3>
+                    </ion-label>
+                </ion-item>
+            </ion-card-header>
+
+            <ion-card-content *ngIf="ocultar1">
+                <ion-label text-wrap>
+                    <h3>{{receta.nombre}}</h3>
+                </ion-label>
+                <img src="{{receta.imagen}}" class="info-img">
+                <ion-label text-wrap>
+                    <h3>Ingredientes:</h3>
+                </ion-label>
+                <ion-item lines="none">
+                    <ion-icon name="return-down-forward-outline" slot="start"></ion-icon>
+                    <ion-label text-wrap> {{receta.ingrediente1}}
+                    </ion-label>
+                </ion-item>
+                <ion-item lines="none" *ngIf="receta.ingrediente1">
+                    <ion-icon name="return-down-forward-outline" slot="start"></ion-icon>
+                    <ion-label text-wrap> {{receta.ingrediente2}}
+                    </ion-label>
+                </ion-item>
+                <ion-item lines="none" *ngIf="receta.ingrediente2">
+                    <ion-icon name="return-down-forward-outline" slot="start"></ion-icon>
+                    <ion-label text-wrap> {{receta.ingrediente3}}
+                    </ion-label>
+                </ion-item>
+                <ion-item lines="none" *ngIf="receta.ingrediente3">
+                    <ion-icon name="return-down-forward-outline" slot="start"></ion-icon>
+                    <ion-label text-wrap> {{receta.ingrediente4}}
+                    </ion-label>
+                </ion-item>
+                <ion-item lines="none" *ngIf="receta.ingrediente4">
+                    <ion-icon name="return-down-forward-outline" slot="start"></ion-icon>
+                    <ion-label text-wrap> {{receta.ingrediente5}}
+                    </ion-label>
+                </ion-item>
+                <ion-item lines="none" *ngIf="receta.ingrediente5">
+                    <ion-icon name="return-down-forward-outline" slot="start"></ion-icon>
+                    <ion-label text-wrap> {{receta.ingrediente6}}
+                    </ion-label>
+                </ion-item>
+                <ion-item lines="none" *ngIf="receta.ingrediente6">
+                    <ion-icon name="return-down-forward-outline" slot="start"></ion-icon>
+                    <ion-label text-wrap> {{receta.ingrediente7}}
+                    </ion-label>
+                </ion-item>
+                Descripción:
+                <ion-item lines="none">
+                    <ion-label text-wrap> {{receta.preparacion}}
+                    </ion-label>
+                </ion-item>
+                Comentario:
+                <ion-item lines="none">
+                    <ion-label text-wrap> {{receta.comentario}}
+                    </ion-label>
+                </ion-item>
+            </ion-card-content>
+        </ion-card>
+    </ion-item>
+
+
+
+
+    <!--<ion-card>
+        <ion-item button *ngFor="let receta of recetas" (click)="accion1()">
+
+            <ion-avatar slot="start">
+                <img src="{{receta.imagen}}" alt="{{receta.nombre}}" *ngIf="receta.imagen != null">
+            </ion-avatar>
+            <ion-label text-wrap>
+                <h3>{{receta.nombre}}</h3>
+            </ion-label>
+
+            <ion-card *ngIf="ocultar1" slot="" position="absolute">
+                <ion-card-header text-center>
+                    <ion-card-title>{{receta.nombre}}</ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                    <img src="{{receta.imagen}}" class="info.img" alt="imagen">{{receta.descripcion}}
+                    <ion-item lines="none">
+                        <ion-icon name="ingrediente1" slot="start"></ion-icon>
+                        <ion-label>{{receta.ingrediente1}}</ion-label>
+                    </ion-item>
+                </ion-card-content>
+            </ion-card>
+        </ion-item>
+   
+
+    </ion-card>
+ -->
+</ion-content>
