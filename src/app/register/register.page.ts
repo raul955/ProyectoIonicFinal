@@ -24,20 +24,21 @@ export class RegisterPage implements OnInit {
     const {username, password, cpassword} = this;
     if(password !== cpassword){
       this.presentAlert('Error', 'Las contraseñas no coinciden');
-    }
+      this.router.navigate(['register']);
+    }else{
     try{
     const res = await this.afAuth.auth.createUserWithEmailAndPassword(username,password);
     this.router.navigate(['menu']);
     console.log(res);
     }catch(err){
-      if(err.code==='auth/email-already-in-use'){
+      if(err.code === 'auth/email-already-in-use') {
         this.presentAlert('Error', 'Correo ya en uso');
-        }else if(err.code==='auth/weak-password'){
+        }else if (err.code === 'auth/weak-password') {
           this.presentAlert('Error', 'Contraseña demasiado débil');
-        }else if(err.code==='auth/invalid-email'){
+        }else if (err.code === 'auth/invalid-email') {
           this.presentAlert('Error', 'El correo no es válido');
         }
-  }
+    }}
   };
 
   async presentAlert(title: string, content: string) {
